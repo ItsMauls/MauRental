@@ -1,14 +1,19 @@
 import { personCircle, menuSharp } from 'ionicons/icons';
 import { SearchBar } from './SearchBar';
 import { Categories } from './Categories';
-import { Link } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 export const NavBar = () => {
+    const { pathname } = useLocation()
+    const home = pathname === '/'
     return (
+        <>
         <div className='sticky top-0 z-50 bg-white'>
             <nav className="border-b-2 border-gray-100 px-4 mx-auto ">
                 <div className="hidden md:grid items-center grid-cols-3 pt-2 justify-end">
-                    <h1 className="text-3xl text-orange-500 font-manrope">Maurental</h1>
+                    <Link to={'/'}>
+                        <h1 className="text-3xl text-orange-500 font-manrope">Maurental</h1>
+                    </Link>
                     <div className="flex justify-between w-2/3 text-center mx-auto">
                         {/* <Link to={'/home'}> */}
                             {/* <h1 className="">Home</h1> */}
@@ -31,7 +36,10 @@ export const NavBar = () => {
                 </div>
                 <SearchBar />
             </nav>
-            <Categories />
+            { home && <Categories />}
         </div>
+        <Outlet />  
+        </>
     )
 }
+
