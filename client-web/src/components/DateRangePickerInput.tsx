@@ -3,17 +3,17 @@ import  DateRangePicker  from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { countDay } from '../helpers/countDay';
 
-export const DateRangePickerInput = () => {
+export const DateRangePickerInput = ({harga} : {harga:number}) => {
     const [startDate, setStartDate] = useState<Date >(new Date());
     const [endDate, setEndDate] = useState<Date >(new Date());
     const day = countDay(startDate, endDate)
-    console.log(day)
+    console.log(`total harga = ${day * harga}`)
     return (
-        <div className='flex mx-auto justify-center my-2'>
-            <div>
-                <label className='font-semibold'>Check-In</label>
+        <div className='flex mx-auto justify-center p-4'>
+            <div className=''>
+                <label className='font-semibold block'>Check-In</label>
                     <DateRangePicker
-                                className='rounded-lg py-2 text-center border border-gray-400'
+                                className='py-2 text-center border border-gray-400'
                                 selectsStart
                                 placeholderText='Add Date'
                                 selected={startDate}
@@ -22,9 +22,9 @@ export const DateRangePickerInput = () => {
                             />
             </div>
                 <div>
-                    <label className='font-semibold'>Check-Out</label>
+                    <label className='font-semibold block'>Check-Out</label>
                         <DateRangePicker
-                            className='rounded-lg py-2 text-center border border-gray-400'
+                            className='py-2 text-center border border-gray-400'
                             selectsEnd
                             placeholderText='Add Date'
                             selected={endDate}

@@ -3,7 +3,7 @@ import { personRemoveOutline, peopleOutline, gitMergeOutline, trashBinOutline } 
 
 export const VehicleInfo = () => {
     return (
-        <div className="bg-gray-200 w-5/6 max-h-sm col-span-2 rounded-lg ml-4">
+        <div className="bg-gray-200 md:float-start md:w-1/2 mx-auto my-4 rounded-lg md:ml-4">
             <div className="grid grid-cols-2 p-3 gap-4">
                 <div className="flex items-center">
                     <IonIcon 

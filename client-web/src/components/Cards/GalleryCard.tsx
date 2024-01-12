@@ -1,6 +1,6 @@
 export const GalleryCard = () => {
     return (
-        <div className="container my-4 w-full mx-auto p-4">
+        <div className="container hidden md:block my-4 w-full mx-auto p-4">
             <div className="grid grid-cols-3 gap-4 ">
                 <div 
                     className="row-span-2 col-span-2">
