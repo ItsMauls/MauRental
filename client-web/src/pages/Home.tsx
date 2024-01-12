@@ -1,6 +1,7 @@
 import { Card } from "../components/Cards/Card"
 
 
+
 export const Home = () => {
     return (
       <>
@@ -17,6 +18,7 @@ export const Home = () => {
         <Card />
         <Card />
       </div>
+  
       </>
     )
 }
